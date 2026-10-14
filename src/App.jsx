@@ -445,8 +445,12 @@ function InteractivePhotoAvatar({ setShowResumeModal }) {
         >
           <div className="w-full h-full rounded-full overflow-hidden bg-[#16070A] relative border border-white/10">
             <img
-              src="public/sharnitha.png"
-              onError={(e) => { e.currentTarget.src = "sharnitha.png"; }}
+              src="sharnitha.png"
+              onError={(e) => {
+                if (!e.currentTarget.src.endsWith('/sharnitha.png')) {
+                  e.currentTarget.src = 'sharnitha.png';
+                }
+              }}
               alt="Sharnitha T"
               className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/avatar:scale-[1.03]"
             />
